@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Light Control</title>
+</head>
+<body>
+  <h1>Light Control Panel</h1>
+  <label for="timeout">Set Light Timeout (in minutes):</label>
+  <input type="number" id="timeout" min="1" max="60" />
+  <button onclick="setTimeout()">Set Timeout</button>
+
+  <script>
+    function setTimeout() {
+      const timeout = document.getElementById('timeout').value;
+      fetch('https://yourvercelapp.com/update', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ timeout: timeout })
+      })
+      .then(response => response.json())
+      .then(data => alert('Timeout set successfully'))
+      .catch(error => console.error('Error:', error));
+    }
+  </script>
+</body>
+</html>

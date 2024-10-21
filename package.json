@@ -1,0 +1,13 @@
+{
+  "name": "light-sensor-system",
+  "version": "1.0.0",
+  "description": "Light sensor system with email notifications",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemailer": "^6.7.0"
+  }
+}
